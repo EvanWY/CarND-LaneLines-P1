@@ -12,7 +12,8 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./test_images_output/solidYellowLeft.jpg
-[image2]: ./test_videos_output/solidYellowLeftScreenShot.png
+[image2]: ./playground/solidYellowLeftScreenShot.png
+[image3]: ./playground/challenge_solve.jpg
 
 ---
 
@@ -37,6 +38,15 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 3. Use the lane from last frame to calculate the new lane, so that it's more stable
 
 ![alt text][image2]
+
+
+To complete the challenge, here are my modification to draw_lines()
+
+1. Used angle to filter out lines, only keep lines with a slope between 0.5 and 2.0
+2. Instead of keep the longest line, I calculate the average starting point end ending point of all lines for both left and right lane
+3. Extended line until it touch the bottom of the screen
+
+![alt text][image3]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
