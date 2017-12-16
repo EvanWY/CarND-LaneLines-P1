@@ -43,8 +43,8 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 To complete the challenge, here are my modification to draw_lines()
 
 1. Used angle to filter out lines, only keep lines with a slope between 0.5 and 2.0
-2. Instead of keep the longest line, I calculate the average starting point end ending point of all lines for both left and right lane
-3. Extended line until it touch the bottom of the screen
+2. Instead of keeping the longest line, I calculated the average starting point end ending point of all lines
+3. Extended line until it touches the bottom of the screen
 
 ![alt text][image3]
 
