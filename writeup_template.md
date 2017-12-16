@@ -12,7 +12,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./test_images_output/solidYellowLeft.jpg
-[image2]: ./test_videos/solidYellowLeftScreenShot.png
+[image2]: ./test_videos_output/solidYellowLeftScreenShot.png
 
 ---
 
@@ -42,13 +42,13 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+One potential shortcoming would be what would happen when the car direction change rapidly, because the lane tracking algorithm relies on previous frame data.
 
-Another shortcoming could be ...
+Another shortcoming is that it couldn't handle corner very well because it assumes that lane line are straight.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to use a line finding algorithm that support detecting curve to replace hough.
 
-Another potential improvement could be to ...
+Another potential improvement could be to make use of the color of the road.
