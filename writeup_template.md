@@ -1,8 +1,4 @@
-# **Finding Lane Lines on the Road** 
-
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
+# **Finding Lane Lines on the Road**
 
 ---
 
@@ -15,7 +11,8 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images_output/solidYellowLeft.jpg
+[image2]: ./test_videos/solidYellowLeftScreenShot.png
 
 ---
 
@@ -23,13 +20,23 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 5 steps. 
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+1. Converted the images to grayscale
+2. Used gaussian blur to blur the image
+3. Find edges using canny edge detector
+4. Mask only the area that will have the lane mark
+5. Transform to hough space to find lines
 
 ![alt text][image1]
+
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function with this method.
+
+1. Use (x1-x2) * (y1-y2) to tell if a line is left or right lane
+2. Keep the longest lines for both left and right lane
+3. Use the lane from last frame to calculate the new lane, so that it's more stable
+
+![alt text][image2]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
